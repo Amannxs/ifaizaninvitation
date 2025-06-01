@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation - Faizan & Soyeba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Amiri', serif;
+      background-color: #f5f5dc; /* cream */
+      background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+      background-repeat: repeat;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border: 2px solid #c2a976;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .bismillah {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-family: 'Great Vibes', cursive;
+      color: #8a6d3b;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 14px;
+      margin: 10px 0 20px;
+    }
+
+    .names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 28px;
+      margin: 10px 0 5px;
+      color: #4b2e2e;
+    }
+
+    .parent-names {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    .download-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #8a6d3b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .download-btn:hover {
+      background-color: #7c5f32;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="invitation">
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
+    <div class="quote">
+      "And He created for you from yourselves mates that you may find tranquillity in them;<br>
+      and He placed between you affection and mercy."<br>
+      <em>- Surah Ar-Rum [30:21]</em>
+    </div>
+    
+    <div class="names">Faizan</div>
+    <div class="parent-names">Son of Asghar Khan Pathan</div>
+    <div class="names">Soyeba</div>
+    <div class="parent-names">Daughter of Nasir Khan Pathan</div>
+    <p class="details">
+      🗓️ <strong>Date:</strong> 9th November 2025<br>
+      🕚 <strong>Time:</strong> 11:00 AM<br>
+      📍 <strong>Venue:</strong> Aqsa Park Hall, Shahada, Dist Nandurbar
+    </p>
+    <div class="footer">
+        <p class="details">With the blessings of Allah (SWT),</p>
+    <p class="details">We, the family of <strong>Faizan Khan Pathan</strong></p>
+    <p class="details">Cordially invite you to the Nikah Ceremony of our beloved Son.</p>
+        <p class="details"><strong>From:</strong><br>
+      Asghar khan Nawaz khan Pathan (Father)<br>
+      Anees khan Nawaz khan Pathan (Uncle)<br>
+      babu khan Nawaz khan Pathan (Uncle)</p>
+      Your presence will grace the occasion and earn us your duas.
+    </div>
+    <button class="download-btn" onclick="downloadPDF()">Download Invitation (PDF)</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("invitation");
+      html2pdf().set({
+        margin: 0,
+        filename: "Faizan-Soyeba-Wedding-Invitation.pdf",
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).from(element).save();
+    }
+  </script>
+</body>
+</html>
